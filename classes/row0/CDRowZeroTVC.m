@@ -7,8 +7,14 @@
 //
 
 #import "CDRowZeroTVC.h"
+#import "CDRowZeroCell.h"
 
 @interface CDRowZeroTVC ()
+
+@property (nonatomic ,retain)NSArray * cellsArray;
+@property (nonatomic ,retain)NSArray * dataArray;
+
+@property (nonatomic ,retain) UITableViewCell * tableViewCell;
 
 @end
 
@@ -22,6 +28,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self setDataOfVC];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,58 +40,31 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.cellsArray.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    /**/
+    CDRowZeroCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CDRowZeroCell" forIndexPath:indexPath];
     
+    NSString * stringF = [self.cellsArray objectAtIndex:indexPath.row];
+    NSString * stringS = [self.dataArray objectAtIndex:indexPath.row];
+    [cell setFirstcell:stringF Secondcell:stringS indexPath:indexPath.row];
+//    [cell setCellViews:string indexPath:indexPath.row];
+    [cell.labelF sizeToFit];
+    [cell.labelS sizeToFit];
     // Configure the cell...
     
     return cell;
+    //*/
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -94,5 +75,11 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+- (void)setDataOfVC {
+    self.cellsArray = @[@"Our Time",@"FU",@"No One",@"Vicious",@"Happy"];
+    self.dataArray = @[@"human",@"Slave To Love",@"Who's That Girl?",@"They're Not Waving",@"AQUARIUS"];
+    
+    CDRowZeroCell * cell = (CDRowZeroCell *)self.tableViewCell;
+    
+}
 @end

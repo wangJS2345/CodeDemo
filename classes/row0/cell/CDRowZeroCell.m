@@ -21,4 +21,11 @@
     // Configure the view for the selected state
 }
 
+- (void)setFirstcell:(NSString *)stringF Secondcell:(NSString *)stringS indexPath:(NSInteger)indexPath {
+    NSString * str1 = [NSString stringWithString:stringF];
+    NSString * str2 = [NSString stringWithString:stringS];
+    self.labelF.text = str1;
+    self.labelS.text = str2;
+
+}
 @end
