@@ -15,6 +15,7 @@
 @property (nonatomic ,retain)NSArray * dataArray;
 
 @property (nonatomic ,retain) UITableViewCell * tableViewCell;
+@property (nonatomic ,retain) CDRowZeroCell * rowCell;
 
 @end
 
@@ -80,6 +81,6 @@
     self.dataArray = @[@"human",@"Slave To Love",@"Who's That Girl?",@"They're Not Waving",@"AQUARIUS"];
     
     CDRowZeroCell * cell = (CDRowZeroCell *)self.tableViewCell;
-    
+//    self.rowCell = [CDRowZeroCell ];
 }
 @end

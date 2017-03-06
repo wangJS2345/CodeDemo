@@ -19,6 +19,10 @@
 		1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FDA41E695D3C003630C7 /* CDRootTVC.m */; };
 		1879FDA91E695E22003630C7 /* CDRowZeroTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FDA81E695E22003630C7 /* CDRowZeroTVC.m */; };
 		1879FDAD1E695E60003630C7 /* CDRowZeroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FDAC1E695E60003630C7 /* CDRowZeroCell.m */; };
+		18F7C8B11E6D1AAB00EF8888 /* ClickBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B01E6D1AAB00EF8888 /* ClickBoxViewController.m */; };
+		18F7C8B41E6D24F100EF8888 /* CheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B31E6D24F100EF8888 /* CheckButton.m */; };
+		18F7C8B81E6D26BE00EF8888 /* CTCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B71E6D26BE00EF8888 /* CTCheckbox.m */; };
+		18F7C8BC1E6D2A2D00EF8888 /* AKCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8BB1E6D2A2D00EF8888 /* AKCheckBox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,14 @@
 		1879FDA81E695E22003630C7 /* CDRowZeroTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroTVC.m; sourceTree = "<group>"; };
 		1879FDAB1E695E60003630C7 /* CDRowZeroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowZeroCell.h; sourceTree = "<group>"; };
 		1879FDAC1E695E60003630C7 /* CDRowZeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroCell.m; sourceTree = "<group>"; };
+		18F7C8AF1E6D1AAB00EF8888 /* ClickBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickBoxViewController.h; sourceTree = "<group>"; };
+		18F7C8B01E6D1AAB00EF8888 /* ClickBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickBoxViewController.m; sourceTree = "<group>"; };
+		18F7C8B21E6D24F100EF8888 /* CheckButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckButton.h; sourceTree = "<group>"; };
+		18F7C8B31E6D24F100EF8888 /* CheckButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckButton.m; sourceTree = "<group>"; };
+		18F7C8B61E6D26BE00EF8888 /* CTCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCheckbox.h; sourceTree = "<group>"; };
+		18F7C8B71E6D26BE00EF8888 /* CTCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCheckbox.m; sourceTree = "<group>"; };
+		18F7C8BA1E6D2A2D00EF8888 /* AKCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCheckBox.h; sourceTree = "<group>"; };
+		18F7C8BB1E6D2A2D00EF8888 /* AKCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCheckBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,9 @@
 		1879FD9D1E695CB7003630C7 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				18F7C8B91E6D2A2D00EF8888 /* AKCheckBox */,
+				18F7C8B51E6D26BE00EF8888 /* CTCheckbox */,
+				18F7C8AE1E6D1A9200EF8888 /* clickBox */,
 				1879FDA61E695DFD003630C7 /* row0 */,
 				1879FDA21E695D1B003630C7 /* rootTableVC */,
 				1879FD9E1E695CBE003630C7 /* nav */,
@@ -198,6 +213,35 @@
 				1879FDAC1E695E60003630C7 /* CDRowZeroCell.m */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		18F7C8AE1E6D1A9200EF8888 /* clickBox */ = {
+			isa = PBXGroup;
+			children = (
+				18F7C8AF1E6D1AAB00EF8888 /* ClickBoxViewController.h */,
+				18F7C8B01E6D1AAB00EF8888 /* ClickBoxViewController.m */,
+				18F7C8B21E6D24F100EF8888 /* CheckButton.h */,
+				18F7C8B31E6D24F100EF8888 /* CheckButton.m */,
+			);
+			path = clickBox;
+			sourceTree = "<group>";
+		};
+		18F7C8B51E6D26BE00EF8888 /* CTCheckbox */ = {
+			isa = PBXGroup;
+			children = (
+				18F7C8B61E6D26BE00EF8888 /* CTCheckbox.h */,
+				18F7C8B71E6D26BE00EF8888 /* CTCheckbox.m */,
+			);
+			path = CTCheckbox;
+			sourceTree = "<group>";
+		};
+		18F7C8B91E6D2A2D00EF8888 /* AKCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				18F7C8BA1E6D2A2D00EF8888 /* AKCheckBox.h */,
+				18F7C8BB1E6D2A2D00EF8888 /* AKCheckBox.m */,
+			);
+			path = AKCheckBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,10 +382,14 @@
 			files = (
 				1879FDA11E695CDA003630C7 /* CDNaigationVC.m in Sources */,
 				1879FD721E695C9D003630C7 /* ViewController.m in Sources */,
+				18F7C8BC1E6D2A2D00EF8888 /* AKCheckBox.m in Sources */,
+				18F7C8B81E6D26BE00EF8888 /* CTCheckbox.m in Sources */,
 				1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */,
 				1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */,
+				18F7C8B11E6D1AAB00EF8888 /* ClickBoxViewController.m in Sources */,
 				1879FD6C1E695C9D003630C7 /* main.m in Sources */,
 				1879FDA91E695E22003630C7 /* CDRowZeroTVC.m in Sources */,
+				18F7C8B41E6D24F100EF8888 /* CheckButton.m in Sources */,
 				1879FDAD1E695E60003630C7 /* CDRowZeroCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +630,7 @@
 				1879FD961E695C9D003630C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1879FD971E695C9D003630C7 /* Build configuration list for PBXNativeTarget "CodeDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +639,7 @@
 				1879FD991E695C9D003630C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1879FD9A1E695C9D003630C7 /* Build configuration list for PBXNativeTarget "CodeDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +648,7 @@
 				1879FD9C1E695C9D003630C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
