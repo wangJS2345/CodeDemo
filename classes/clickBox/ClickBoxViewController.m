@@ -69,10 +69,24 @@
 - (IBAction)buttonAClick:(AKCheckBox *)sender {
 }
 - (void)initCheckButton {
-    CheckButton * cb=[[ CheckButton alloc ] initWithFrame : CGRectMake ( 20 , 60 , 260 , 32 )];
-    cb. label . text = @"选中" ;
+    CheckButton * cb=[[ CheckButton alloc ] initWithFrame : CGRectMake ( 20 , 80 , 260 , 32 )];
+//    cb. label . text = @"选中" ;
     cb. value =[[ NSNumber alloc ] initWithInt : 18 ];
-    cb. style = CheckButtonStyleDefault ;
+    
+    //自定义按钮图片
+    cb.uncheckname = @"login-catalog-defaulft.png";
+    cb.checkname = @"login_catalog_selected.png";
+    cb.style = CheckButtonStyleRadio;
+    
+//    cb. style = CheckButtonStyleDefault ;
     [ self . view addSubview :cb];
+    [cb addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+- (void)btnClick:(CheckButton *)sender {
+    if (sender.isChecked) {
+        NSLog(@"1111");
+    }else {
+        NSLog(@"22222");
+    }
 }
 @end

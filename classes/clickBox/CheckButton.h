@@ -28,6 +28,8 @@ typedef enum {
 @property ( retain , nonatomic ) id value,delegate;
 @property ( retain , nonatomic )UILabel* label;
 @property ( retain , nonatomic )UIImageView* icon;
+@property ( copy , nonatomic )NSString* checkname;// 勾选时的图片文件名
+@property ( copy , nonatomic )NSString* uncheckname;//反选时的图片文件名
 @property ( assign )CheckButtonStyle style;
 -( CheckButtonStyle )style;
 -( void )setStyle:( CheckButtonStyle )st;

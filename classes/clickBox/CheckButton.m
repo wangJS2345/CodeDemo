@@ -46,8 +46,10 @@
             uncheckname = @"unselecdP.png" ;
             break ;
         case CheckButtonStyleRadio :
-            checkname = @"selecedP.png" ;
-            uncheckname = @"unselecdP.png" ;
+//            checkname = @"selecedP.png" ;
+//            uncheckname = @"unselecdP.png" ;
+            checkname = self.checkname ;
+            uncheckname = self.uncheckname ;
             break ;
         default :
             break ;
