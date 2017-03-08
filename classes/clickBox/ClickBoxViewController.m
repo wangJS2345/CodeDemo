@@ -8,6 +8,7 @@
 
 #import "ClickBoxViewController.h"
 #import "CheckButton.h"
+
 #import "CTCheckbox.h"
 #import "AKCheckBox.h"
 @interface ClickBoxViewController ()
@@ -34,6 +35,7 @@
 //    [self.buttonA setColor:[UIColor blackColor] forControlState:UIControlStateNormal];
 //    [self.buttonA setColor:[UIColor grayColor] forControlState:UIControlStateDisabled];
 //    [self checkboxDidChange:self.buttonA];
+    [self initCheckButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,5 +67,12 @@
     }
 }
 - (IBAction)buttonAClick:(AKCheckBox *)sender {
+}
+- (void)initCheckButton {
+    CheckButton * cb=[[ CheckButton alloc ] initWithFrame : CGRectMake ( 20 , 60 , 260 , 32 )];
+    cb. label . text = @"选中" ;
+    cb. value =[[ NSNumber alloc ] initWithInt : 18 ];
+    cb. style = CheckButtonStyleDefault ;
+    [ self . view addSubview :cb];
 }
 @end
