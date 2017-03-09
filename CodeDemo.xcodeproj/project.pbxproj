@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182AAB531E70EAB500D3FC43 /* files.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182AAB521E70EAB500D3FC43 /* files.plist */; };
+		182AAB571E70EC5D00D3FC43 /* PoemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB561E70EC5D00D3FC43 /* PoemModel.m */; };
+		182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */; };
+		182AAB5C1E70EDA700D3FC43 /* CDRowZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */; };
+		182AAB5F1E70F33C00D3FC43 /* PoemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB5E1E70F33C00D3FC43 /* PoemCell.m */; };
 		1879FD6C1E695C9D003630C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6B1E695C9D003630C7 /* main.m */; };
 		1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6E1E695C9D003630C7 /* AppDelegate.m */; };
 		1879FD721E695C9D003630C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD711E695C9D003630C7 /* ViewController.m */; };
@@ -18,7 +23,6 @@
 		1879FDA11E695CDA003630C7 /* CDNaigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FDA01E695CDA003630C7 /* CDNaigationVC.m */; };
 		1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FDA41E695D3C003630C7 /* CDRootTVC.m */; };
 		1879FDA91E695E22003630C7 /* CDRowZeroTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FDA81E695E22003630C7 /* CDRowZeroTVC.m */; };
-		1879FDAD1E695E60003630C7 /* CDRowZeroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FDAC1E695E60003630C7 /* CDRowZeroCell.m */; };
 		18F7C8B11E6D1AAB00EF8888 /* ClickBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B01E6D1AAB00EF8888 /* ClickBoxViewController.m */; };
 		18F7C8B41E6D24F100EF8888 /* CheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B31E6D24F100EF8888 /* CheckButton.m */; };
 		18F7C8B81E6D26BE00EF8888 /* CTCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B71E6D26BE00EF8888 /* CTCheckbox.m */; };
@@ -43,6 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182AAB521E70EAB500D3FC43 /* files.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = files.plist; sourceTree = "<group>"; };
+		182AAB551E70EC5D00D3FC43 /* PoemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoemModel.h; sourceTree = "<group>"; };
+		182AAB561E70EC5D00D3FC43 /* PoemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoemModel.m; sourceTree = "<group>"; };
+		182AAB581E70EDA700D3FC43 /* CDRowZeroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowZeroCell.h; sourceTree = "<group>"; };
+		182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroCell.m; sourceTree = "<group>"; };
+		182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDRowZeroCell.xib; sourceTree = "<group>"; };
+		182AAB5D1E70F33C00D3FC43 /* PoemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoemCell.h; sourceTree = "<group>"; };
+		182AAB5E1E70F33C00D3FC43 /* PoemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoemCell.m; sourceTree = "<group>"; };
 		1879FD671E695C9D003630C7 /* CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1879FD6B1E695C9D003630C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1879FD6D1E695C9D003630C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,8 +77,6 @@
 		1879FDA41E695D3C003630C7 /* CDRootTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRootTVC.m; sourceTree = "<group>"; };
 		1879FDA71E695E22003630C7 /* CDRowZeroTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowZeroTVC.h; sourceTree = "<group>"; };
 		1879FDA81E695E22003630C7 /* CDRowZeroTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroTVC.m; sourceTree = "<group>"; };
-		1879FDAB1E695E60003630C7 /* CDRowZeroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowZeroCell.h; sourceTree = "<group>"; };
-		1879FDAC1E695E60003630C7 /* CDRowZeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroCell.m; sourceTree = "<group>"; };
 		18F7C8AF1E6D1AAB00EF8888 /* ClickBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickBoxViewController.h; sourceTree = "<group>"; };
 		18F7C8B01E6D1AAB00EF8888 /* ClickBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickBoxViewController.m; sourceTree = "<group>"; };
 		18F7C8B21E6D24F100EF8888 /* CheckButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckButton.h; sourceTree = "<group>"; };
@@ -102,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182AAB541E70EC4F00D3FC43 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				182AAB551E70EC5D00D3FC43 /* PoemModel.h */,
+				182AAB561E70EC5D00D3FC43 /* PoemModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		1879FD5E1E695C9D003630C7 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +153,7 @@
 				1879FD761E695C9D003630C7 /* Assets.xcassets */,
 				1879FD781E695C9D003630C7 /* LaunchScreen.storyboard */,
 				1879FD7B1E695C9D003630C7 /* Info.plist */,
+				182AAB521E70EAB500D3FC43 /* files.plist */,
 				1879FD6A1E695C9D003630C7 /* Supporting Files */,
 			);
 			path = CodeDemo;
@@ -199,6 +219,7 @@
 		1879FDA61E695DFD003630C7 /* row0 */ = {
 			isa = PBXGroup;
 			children = (
+				182AAB541E70EC4F00D3FC43 /* model */,
 				1879FDA71E695E22003630C7 /* CDRowZeroTVC.h */,
 				1879FDA81E695E22003630C7 /* CDRowZeroTVC.m */,
 				1879FDAA1E695E3B003630C7 /* cell */,
@@ -209,8 +230,11 @@
 		1879FDAA1E695E3B003630C7 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				1879FDAB1E695E60003630C7 /* CDRowZeroCell.h */,
-				1879FDAC1E695E60003630C7 /* CDRowZeroCell.m */,
+				182AAB581E70EDA700D3FC43 /* CDRowZeroCell.h */,
+				182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */,
+				182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */,
+				182AAB5D1E70F33C00D3FC43 /* PoemCell.h */,
+				182AAB5E1E70F33C00D3FC43 /* PoemCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -353,6 +377,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182AAB5C1E70EDA700D3FC43 /* CDRowZeroCell.xib in Resources */,
+				182AAB531E70EAB500D3FC43 /* files.plist in Resources */,
 				1879FD7A1E695C9D003630C7 /* LaunchScreen.storyboard in Resources */,
 				1879FD771E695C9D003630C7 /* Assets.xcassets in Resources */,
 				1879FD751E695C9D003630C7 /* Main.storyboard in Resources */,
@@ -383,14 +409,16 @@
 				1879FDA11E695CDA003630C7 /* CDNaigationVC.m in Sources */,
 				1879FD721E695C9D003630C7 /* ViewController.m in Sources */,
 				18F7C8BC1E6D2A2D00EF8888 /* AKCheckBox.m in Sources */,
+				182AAB5F1E70F33C00D3FC43 /* PoemCell.m in Sources */,
 				18F7C8B81E6D26BE00EF8888 /* CTCheckbox.m in Sources */,
 				1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */,
+				182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */,
 				1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */,
 				18F7C8B11E6D1AAB00EF8888 /* ClickBoxViewController.m in Sources */,
 				1879FD6C1E695C9D003630C7 /* main.m in Sources */,
+				182AAB571E70EC5D00D3FC43 /* PoemModel.m in Sources */,
 				1879FDA91E695E22003630C7 /* CDRowZeroTVC.m in Sources */,
 				18F7C8B41E6D24F100EF8888 /* CheckButton.m in Sources */,
-				1879FDAD1E695E60003630C7 /* CDRowZeroCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

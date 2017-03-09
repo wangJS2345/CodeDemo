@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PoemCell.h"
 
 @interface CDRowZeroTVC : UITableViewController
 
