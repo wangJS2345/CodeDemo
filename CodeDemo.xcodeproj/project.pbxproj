@@ -11,7 +11,6 @@
 		182AAB571E70EC5D00D3FC43 /* PoemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB561E70EC5D00D3FC43 /* PoemModel.m */; };
 		182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */; };
 		182AAB5C1E70EDA700D3FC43 /* CDRowZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */; };
-		182AAB5F1E70F33C00D3FC43 /* PoemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB5E1E70F33C00D3FC43 /* PoemCell.m */; };
 		1879FD6C1E695C9D003630C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6B1E695C9D003630C7 /* main.m */; };
 		1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6E1E695C9D003630C7 /* AppDelegate.m */; };
 		1879FD721E695C9D003630C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD711E695C9D003630C7 /* ViewController.m */; };
@@ -53,8 +52,6 @@
 		182AAB581E70EDA700D3FC43 /* CDRowZeroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowZeroCell.h; sourceTree = "<group>"; };
 		182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroCell.m; sourceTree = "<group>"; };
 		182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDRowZeroCell.xib; sourceTree = "<group>"; };
-		182AAB5D1E70F33C00D3FC43 /* PoemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoemCell.h; sourceTree = "<group>"; };
-		182AAB5E1E70F33C00D3FC43 /* PoemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoemCell.m; sourceTree = "<group>"; };
 		1879FD671E695C9D003630C7 /* CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1879FD6B1E695C9D003630C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1879FD6D1E695C9D003630C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -233,8 +230,6 @@
 				182AAB581E70EDA700D3FC43 /* CDRowZeroCell.h */,
 				182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */,
 				182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */,
-				182AAB5D1E70F33C00D3FC43 /* PoemCell.h */,
-				182AAB5E1E70F33C00D3FC43 /* PoemCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -409,7 +404,6 @@
 				1879FDA11E695CDA003630C7 /* CDNaigationVC.m in Sources */,
 				1879FD721E695C9D003630C7 /* ViewController.m in Sources */,
 				18F7C8BC1E6D2A2D00EF8888 /* AKCheckBox.m in Sources */,
-				182AAB5F1E70F33C00D3FC43 /* PoemCell.m in Sources */,
 				18F7C8B81E6D26BE00EF8888 /* CTCheckbox.m in Sources */,
 				1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */,
 				182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */,
