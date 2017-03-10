@@ -11,6 +11,8 @@
 		182AAB571E70EC5D00D3FC43 /* PoemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB561E70EC5D00D3FC43 /* PoemModel.m */; };
 		182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */; };
 		182AAB5C1E70EDA700D3FC43 /* CDRowZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */; };
+		1848C79A1E72365200479347 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848C7991E72365200479347 /* ImageViewController.m */; };
+		1848C79D1E72398000479347 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1848C79C1E72398000479347 /* MobileCoreServices.framework */; };
 		1879FD6C1E695C9D003630C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6B1E695C9D003630C7 /* main.m */; };
 		1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6E1E695C9D003630C7 /* AppDelegate.m */; };
 		1879FD721E695C9D003630C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD711E695C9D003630C7 /* ViewController.m */; };
@@ -52,6 +54,9 @@
 		182AAB581E70EDA700D3FC43 /* CDRowZeroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowZeroCell.h; sourceTree = "<group>"; };
 		182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroCell.m; sourceTree = "<group>"; };
 		182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDRowZeroCell.xib; sourceTree = "<group>"; };
+		1848C7981E72365200479347 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		1848C7991E72365200479347 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		1848C79C1E72398000479347 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1879FD671E695C9D003630C7 /* CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1879FD6B1E695C9D003630C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1879FD6D1E695C9D003630C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1848C79D1E72398000479347 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +124,23 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		1848C7971E72364300479347 /* row3 */ = {
+			isa = PBXGroup;
+			children = (
+				1848C7981E72365200479347 /* ImageViewController.h */,
+				1848C7991E72365200479347 /* ImageViewController.m */,
+			);
+			path = row3;
+			sourceTree = "<group>";
+		};
+		1848C79B1E72398000479347 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1848C79C1E72398000479347 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1879FD5E1E695C9D003630C7 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +149,7 @@
 				1879FD831E695C9D003630C7 /* CodeDemoTests */,
 				1879FD8E1E695C9D003630C7 /* CodeDemoUITests */,
 				1879FD681E695C9D003630C7 /* Products */,
+				1848C79B1E72398000479347 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +209,7 @@
 		1879FD9D1E695CB7003630C7 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				1848C7971E72364300479347 /* row3 */,
 				18F7C8B91E6D2A2D00EF8888 /* AKCheckBox */,
 				18F7C8B51E6D26BE00EF8888 /* CTCheckbox */,
 				18F7C8AE1E6D1A9200EF8888 /* clickBox */,
@@ -406,6 +431,7 @@
 				18F7C8BC1E6D2A2D00EF8888 /* AKCheckBox.m in Sources */,
 				18F7C8B81E6D26BE00EF8888 /* CTCheckbox.m in Sources */,
 				1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */,
+				1848C79A1E72365200479347 /* ImageViewController.m in Sources */,
 				182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */,
 				1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */,
 				18F7C8B11E6D1AAB00EF8888 /* ClickBoxViewController.m in Sources */,
