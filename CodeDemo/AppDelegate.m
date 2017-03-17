@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self cleanFinderFiles:@"zhuanti"];
     return YES;
 }
 
@@ -46,6 +47,23 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+- (void)cleanFinderFiles:(NSString *)finder {
+    // 获取沙盒目录
+    //    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //    NSString *imageFilePath = [paths[0] stringByAppendingPathComponent:finder];
+    NSString *fileFinder;
+    fileFinder = [NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),finder];
+    // 在指定目录下创建 "head" 文件夹
+    //判断imageFilePath路径文件夹是否已存在，此处imageFilePath为需要新建的文件夹的绝对路径
+    if ([[NSFileManager defaultManager] fileExistsAtPath:fileFinder]) {
+        //        return;
+        //清空目录
+        [[NSFileManager defaultManager] removeItemAtPath:fileFinder error:NULL];
+        [[NSFileManager defaultManager] createDirectoryAtPath:fileFinder withIntermediateDirectories:YES attributes:nil error:nil];
+    } else {
+        //创建文件夹
+        [[NSFileManager defaultManager] createDirectoryAtPath:fileFinder withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+}
 
 @end

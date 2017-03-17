@@ -10,6 +10,6 @@
 #import <QuickLook/QuickLook.h>
 
 @interface CDRootTVC : UITableViewController<UIDocumentInteractionControllerDelegate>
-@property(nonatomic,strong) UIDocumentInteractionController *documentController;
+@property(nonatomic,strong) UIDocumentInteractionController *documentCtl;
 
 @end

@@ -44,7 +44,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    return 5;
+    return 6;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 4) {
@@ -53,23 +53,14 @@
         NSString *filePath = [fileName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@",filePath]];//filePath 这个是你下载完文件的沙盒路径
         
-        
-        UIDocumentInteractionController *documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:url];
-        self.documentCtl = documentInteractionController;
-        [documentInteractionController setDelegate:self];
-        
-        [documentInteractionController presentOpenInMenuFromRect:CGRectMake(Screen_Width/2, Screen_Height-300, 300, 200)  inView:self.tableView.superview animated:YES];//这里的坐标在iPhone上不起作用，只在iPad上起作用
-        /*
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", @"KingsoftOfficeApp://", filePath]];
-        
-        //创建实例
-        UIDocumentInteractionController *documentController = [UIDocumentInteractionController interactionControllerWithURL:url];
-        
-        //设置代理
-        documentController.delegate = self;
-        
-        [documentController presentPreviewAnimated:YES];
-        */
+        // filePath 你想要用其他应用打开的文件路径
+        _documentController = [UIDocumentInteractionController interactionControllerWithURL:url];
+        _documentController.delegate = self;
+        // .UTI 表示所能支持的第三方文件打开的类型
+        _documentController.UTI = @"com.sunsetlakesoftware.molecules.stl";
+        // 弹出的视图的样式儿 //这里的坐标在iPhone上不起作用，只在iPad上起作用
+        [_documentController presentOpenInMenuFromRect:CGRectMake(Screen_Width/2, Screen_Height-300, 300, 200) inView:self.tableView.superview animated:YES];
+
     }
 }
 /*
@@ -128,12 +119,10 @@
 -(void)documentInteractionController:(UIDocumentInteractionController *)controller willBeginSendingToApplication:(NSString *)application {
     NSString *fileName = [[NSBundle mainBundle] pathForResource:@"测试文档" ofType:@".doc"];
     NSString *filePath = [fileName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@",filePath]];
     //将要发送的应用
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL  URLWithString:@"KingsoftOfficeApp://"]]){
         NSLog(@"install--");
-//        [[UIApplication sharedApplication] openURL:[NSURL  URLWithString:@"KingsoftOfficeApp://"]];
-//        [[UIApplication sharedApplication] openURL:[NSURL  URLWithString:@"KingsoftOfficeApp://"] options:<#(nonnull NSDictionary<NSString *,id> *)#> completionHandler:<#^(BOOL success)completion#>];
+        [[UIApplication sharedApplication] openURL:[NSURL  URLWithString:[NSString stringWithFormat:@"KingsoftOfficeApp://%@",filePath]]];
     }else{
         NSLog(@"no---");
     }
@@ -147,4 +136,5 @@
 -(void)documentInteractionControllerDidDismissOpenInMenu: (UIDocumentInteractionController *)controller {
     
 }
+
 @end

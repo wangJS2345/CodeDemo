@@ -33,11 +33,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>allow Arbitary Loads</key>
-		<true/>
-	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>访问相机</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -77,5 +72,12 @@
 			<string>Default</string>
 		</dict>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<dict/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

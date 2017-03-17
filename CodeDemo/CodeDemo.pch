@@ -1,0 +1,19 @@
+//
+//  CodeDemo.pch
+//  CodeDemo
+//
+//  Created by apple on 2017/3/17.
+//  Copyright © 2017年 LYP. All rights reserved.
+//
+
+#ifndef CodeDemo_pch
+#define CodeDemo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "AFNetworking.h"
+//#define ZhuantiZiyuan_Finder @"专题资源"
+#define ZhuantiZiyuan_Finder @"zhuanti"
+#endif /* CodeDemo_pch */
