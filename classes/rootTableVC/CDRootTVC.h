@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuickLook/QuickLook.h>
 
-@interface CDRootTVC : UITableViewController
+@interface CDRootTVC : UITableViewController<UIDocumentInteractionControllerDelegate>
+@property(nonatomic,strong) UIDocumentInteractionController *documentCtl;
 
 @end

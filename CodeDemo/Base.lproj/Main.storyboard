@@ -252,6 +252,28 @@
                                             <segue destination="caJ-EA-pZF" kind="push" id="KqO-Qt-x3j"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="TOA-Yp-nir">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TOA-Yp-nir" id="tlN-7j-9L1">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打开测试文档.doc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOJ-Z1-P8K">
+                                                    <rect key="frame" x="10" y="2" width="322" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iOJ-Z1-P8K" firstAttribute="leading" secondItem="tlN-7j-9L1" secondAttribute="leading" constant="10" id="9sL-u8-gtT"/>
+                                                <constraint firstAttribute="bottom" secondItem="iOJ-Z1-P8K" secondAttribute="bottom" constant="2" id="ChP-k6-HgU"/>
+                                                <constraint firstAttribute="trailing" secondItem="iOJ-Z1-P8K" secondAttribute="trailing" constant="10" id="lW5-yl-FjN"/>
+                                                <constraint firstItem="iOJ-Z1-P8K" firstAttribute="top" secondItem="tlN-7j-9L1" secondAttribute="top" constant="2" id="uBt-8p-jvv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>

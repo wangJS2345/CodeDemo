@@ -13,6 +13,7 @@
 		182AAB5C1E70EDA700D3FC43 /* CDRowZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */; };
 		1848C79A1E72365200479347 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848C7991E72365200479347 /* ImageViewController.m */; };
 		1848C79D1E72398000479347 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1848C79C1E72398000479347 /* MobileCoreServices.framework */; };
+		185EE4CF1E7960A200AB59FF /* 测试文档.doc in Resources */ = {isa = PBXBuildFile; fileRef = 185EE4CE1E7960A200AB59FF /* 测试文档.doc */; };
 		1879FD6C1E695C9D003630C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6B1E695C9D003630C7 /* main.m */; };
 		1879FD6F1E695C9D003630C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD6E1E695C9D003630C7 /* AppDelegate.m */; };
 		1879FD721E695C9D003630C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1879FD711E695C9D003630C7 /* ViewController.m */; };
@@ -57,6 +58,7 @@
 		1848C7981E72365200479347 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		1848C7991E72365200479347 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		1848C79C1E72398000479347 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		185EE4CE1E7960A200AB59FF /* 测试文档.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "测试文档.doc"; sourceTree = "<group>"; };
 		1879FD671E695C9D003630C7 /* CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1879FD6B1E695C9D003630C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1879FD6D1E695C9D003630C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,9 +143,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		185EE4CD1E79609C00AB59FF /* 资源 */ = {
+			isa = PBXGroup;
+			children = (
+				185EE4CE1E7960A200AB59FF /* 测试文档.doc */,
+			);
+			path = "资源";
+			sourceTree = "<group>";
+		};
 		1879FD5E1E695C9D003630C7 = {
 			isa = PBXGroup;
 			children = (
+				185EE4CD1E79609C00AB59FF /* 资源 */,
 				1879FD9D1E695CB7003630C7 /* classes */,
 				1879FD691E695C9D003630C7 /* CodeDemo */,
 				1879FD831E695C9D003630C7 /* CodeDemoTests */,
@@ -401,6 +412,7 @@
 				182AAB531E70EAB500D3FC43 /* files.plist in Resources */,
 				1879FD7A1E695C9D003630C7 /* LaunchScreen.storyboard in Resources */,
 				1879FD771E695C9D003630C7 /* Assets.xcassets in Resources */,
+				185EE4CF1E7960A200AB59FF /* 测试文档.doc in Resources */,
 				1879FD751E695C9D003630C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
