@@ -7,13 +7,14 @@
 //
 
 #import "GKVLCPlayVC.h"
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface GKVLCPlayVC () <VLCMediaPlayerDelegate,VLCMediaThumbnailerDelegate>
+@interface GKVLCPlayVC () <VLCMediaPlayerDelegate,VLCMediaThumbnailerDelegate,VLCMediaDelegate>
 {
     //正在播放：YES
     BOOL isPlaying;
-    //顶部底部显示YES
-    BOOL isHidden;
+    //播放进度显示
+    BOOL isShowing;
     
     NSTimer *timer;
 }
@@ -44,6 +45,8 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 //暂停/继续播放
 @property (weak, nonatomic) IBOutlet UIButton *stopOrPlayButton;
+@property (weak, nonatomic) IBOutlet UIProgressView *playProgress;
+
 //暂停/继续播放
 - (IBAction)stopOrPlayClick:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
@@ -52,7 +55,23 @@
 - (IBAction)stopChange:(UISlider *)sender;
 - (IBAction)changeEnd:(UISlider *)sender;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+//音量控制
+@property (nonatomic, strong) MPVolumeView *volumeView;
 
+@property (weak, nonatomic) IBOutlet UISlider *voiceSlider;
+- (IBAction)vioceValueChange:(UISlider *)sender;
+
+/*****************/
+//屏幕操作手势
+@property (nonatomic, strong, nullable) UISwipeGestureRecognizer *upGestureRecognizer;
+@property (nonatomic, strong, nullable) UISwipeGestureRecognizer *downGestureRecognizer;
+@property (nonatomic, strong, nullable) UISwipeGestureRecognizer *leftGestureRecognizer;
+@property (nonatomic, strong, nullable) UISwipeGestureRecognizer *rightGestureRecognizer;
+@property (nonatomic, assign) CGFloat coordinateX;
+/*****************/
+//约束
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeight;
 
 @end
 
@@ -74,7 +93,7 @@
     _mediaPlayer.media = media;
     _mediaPlayer.drawable = _playerView;
     _mediaPlayer.delegate = self;
-//    _nameLabel.text = _mediaPlayer.titles
+    [_nameLabel setHidden:YES];
     //获取缩略图
     //初始化并设置代理
     VLCMediaThumbnailer *thumbnailer = [VLCMediaThumbnailer thumbnailerWithMedia:media andDelegate:self];
@@ -84,21 +103,18 @@
     
     //开始播放
     [_mediaPlayer play];
+    [self addGestureRecognizers];
 
-    
-    
-//    [_topView setHidden:YES];
-//    [_bottomView setHidden:YES];
-    
-    // 5秒后自动隐藏顶部和底部
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [_topView setHidden:YES];
-//        [_bottomView setHidden:YES];
+    //音量
+    int volume = _mediaPlayer.audio.volume;
+    NSLog(@"volume----%d",volume);
+    [_voiceSlider setValue:volume];
+
+    // 8秒后自动隐藏顶部和底部
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        isShowing = NO;
+        [_bottomView setHidden:YES];
     });
-    
-    // 设置视频名称
-//    self.vlcPlayerView.videoName = self.playName;
-//    _nameLabel.text = [NSString stringWithFormat:@"%@",_mediaPlayer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,7 +131,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-/*
+
 #pragma mark - 屏幕方向
 // 隐藏状态栏显得和谐
 - (BOOL)prefersStatusBarHidden {
@@ -132,13 +148,13 @@
     //进入界面直接旋转的方向
     return UIInterfaceOrientationLandscapeLeft;
 }
-*/
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //不显示导航栏
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     isPlaying = NO;
-    isHidden = NO;
+    isShowing = YES;
     [self addActionsForView];
 }
 - (void)viewWillDisappear:(BOOL)animated
@@ -146,10 +162,7 @@
     [super viewWillDisappear: animated];
     [_mediaPlayer stop];
 }
-// 隐藏状态栏显得和谐
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
+
 #pragma mark - 视图添加点击事件
 - (void)addActionsForView {
     UITapGestureRecognizer *tapGesturRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapActionOne:)];
@@ -172,8 +185,6 @@
             btn.tag = 21;
             [btn setImage:[UIImage imageNamed:@"play_stop.png"] forState:UIControlStateNormal];
             [_mediaPlayer pause];
-//            [_topView setHidden:NO];
-//            [_bottomView setHidden:NO];
         }
             break;
         case 21:
@@ -182,8 +193,6 @@
             btn.tag = 20;
             [btn setImage:[UIImage imageNamed:@"play_start.png"] forState:UIControlStateNormal];
             [_mediaPlayer play];
-//            [_topView setHidden:YES];
-//            [_bottomView setHidden:YES];
         }
             break;
             
@@ -215,13 +224,10 @@
     NSString *currentString = [NSString stringWithFormat:@"%@",_mediaPlayer.time];
     NSString *remainingString = [NSString stringWithFormat:@"%@",_mediaPlayer.remainingTime];
     NSString *allTimeString = [NSString stringWithFormat:@"%@",_mediaPlayer.media.length];
-    NSInteger value1 = [currentString integerValue];
-    NSInteger value2 = [remainingString integerValue];
-    NSInteger allTime = [allTimeString integerValue];
 
-    NSLog(@"进度条的值----%ld，%ld，%ld",(long)value1,(long)value2,(long)allTime);
     //播放进度 剩余时间
-    [_progressSlider setValue:[currentString floatValue]/[allTimeString floatValue]];
+//    [_progressSlider setValue:[currentString floatValue]/[allTimeString floatValue]];
+    [_playProgress setProgress:[currentString floatValue]/[allTimeString floatValue]];
     _timeLabel.text = remainingString;
 }
 - (IBAction)waitBtnClick:(UIButton *)sender {
@@ -240,7 +246,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [_waitView setHidden:YES];
         isPlaying = NO;
-        isHidden = YES;
     });
 }
 #pragma mark - 手势操作
@@ -249,22 +254,123 @@
     //暂停或继续播放
     //显示或隐藏顶部底部
     if (isPlaying) {
-        [_mediaPlayer pause];
-//        [timer];
+//        [_mediaPlayer pause];
+////        [timer];
+//        //播放模式，改为暂停
+//        _stopOrPlayButton.tag = 21;
+//        [_stopOrPlayButton setImage:[UIImage imageNamed:@"play_stop.png"] forState:UIControlStateNormal];
     }else {
-        [_mediaPlayer play];
+//        [_mediaPlayer play];
+//        //暂停模式，继续播放
+//        _stopOrPlayButton.tag = 20;
+//        [_stopOrPlayButton setImage:[UIImage imageNamed:@"play_start.png"] forState:UIControlStateNormal];
     }
-    
-    if (isHidden) {
-//        [_topView setHidden:NO];
-//        [_bottomView setHidden:NO];
+
+    //显示或隐藏顶部底部
+    if (isShowing) {
+        [UIView animateWithDuration:1 animations:^{
+            [_bottomView setAlpha:1];
+        } completion:^(BOOL finished) {
+            [_bottomView setHidden:YES];
+            
+            // 8秒后自动隐藏顶部和底部
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                isShowing = NO;
+                [self hiddenBottomView];
+            });
+            
+        }];
     }else {
-//        [_topView setHidden:YES];
-//        [_bottomView setHidden:YES];
+        [_bottomView setHidden:NO];
+        [UIView animateWithDuration:1 animations:^{
+            [_bottomView setAlpha:1];
+        }];
     }
     
     isPlaying = !isPlaying;
-    isHidden = !isHidden;
+    isShowing = !isShowing;
+}
+- (void)hiddenBottomView {
+    [UIView animateWithDuration:1 animations:^{
+        [_bottomView setAlpha:1];
+    } completion:^(BOOL finished) {
+        [_bottomView setHidden:YES];
+    }];
+}
+#pragma mark - 添加手势
+- (void)addGestureRecognizers {
+    self.upGestureRecognizer = [[UISwipeGestureRecognizer alloc] init];
+    [self.upGestureRecognizer addTarget:self action:@selector(upGestureRecognizer:)];
+    self.upGestureRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
+    [_playerView addGestureRecognizer:self.upGestureRecognizer];
+    
+    self.downGestureRecognizer = [[UISwipeGestureRecognizer alloc] init];
+    [self.downGestureRecognizer addTarget:self action:@selector(downGestureRecognizer:)];
+    self.downGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    [_playerView addGestureRecognizer:self.downGestureRecognizer];
+    
+    self.leftGestureRecognizer = [[UISwipeGestureRecognizer alloc] init];
+    [self.leftGestureRecognizer addTarget:self action:@selector(leftGestureRecognizer:)];
+    self.leftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [_playerView addGestureRecognizer:self.leftGestureRecognizer];
+    
+    self.rightGestureRecognizer = [[UISwipeGestureRecognizer alloc] init];
+    [self.rightGestureRecognizer addTarget:self action:@selector(rightGestureRecognizer:)];
+    self.rightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [_playerView addGestureRecognizer:self.rightGestureRecognizer];
+}
+- (void)upGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
+    NSLog(@"上上上上上上上");
+    [_mediaPlayer.audio volumeUp];
+
+}
+- (void)downGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
+    NSLog(@"下下下下下下下");
+    [_mediaPlayer.audio volumeDown];
+}
+- (void)leftGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
+    NSLog(@"左左左左左左");
+
+}
+- (void)rightGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
+    NSLog(@"右右右右右");
+
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint touchPoint = [touch locationInView:_playerView];
+    
+    NSLog(@"%f==%f",touchPoint.x,touchPoint.y);
+}
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint touchPoint = [touch locationInView:_playerView];
+    
+    NSLog(@"%f==%f",touchPoint.x,touchPoint.y);
+}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint touchPoint = [touch locationInView:_playerView];
+    
+    NSLog(@"%f==%f",touchPoint.x,touchPoint.y);
+}
+
+- (IBAction)vioceValueChange:(UISlider *)sender {
+//    avAudioPlayer.volume = volumeSlider.value;
+    UISlider *slider = (UISlider *)sender;
+//    _mediaPlayer.media.version
+    [_mediaPlayer.audio setVolume:slider.value];
+}
+
+
+//返回按钮
+- (IBAction)backAndStopClick:(UIButton *)sender{
+    [_mediaPlayer stop];
+    //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadVideoVC"];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

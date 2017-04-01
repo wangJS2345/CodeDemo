@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKr-Jt-WYt">
-                                <rect key="frame" x="0.0" y="60" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             </view>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOh-0C-65u">
@@ -40,6 +40,9 @@
                                             <constraint firstAttribute="width" constant="40" id="7Za-Lr-rMV"/>
                                         </constraints>
                                         <state key="normal" image="whiteBack"/>
+                                        <connections>
+                                            <action selector="backAndStopClick:" destination="JiT-8F-A27" eventType="touchUpInside" id="hV0-CD-aEH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,7 +71,7 @@
                                             <action selector="stopOrPlayClick:" destination="JiT-8F-A27" eventType="touchUpInside" id="tE8-Ip-Tiw"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aQC-za-9g4">
+                                    <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aQC-za-9g4">
                                         <rect key="frame" x="47" y="15" width="262" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -81,6 +84,12 @@
                                             <action selector="stopChange:" destination="JiT-8F-A27" eventType="touchUpInside" id="deq-C5-PPb"/>
                                         </connections>
                                     </slider>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FGZ-w2-bls">
+                                        <rect key="frame" x="50" y="29" width="255" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="ujm-H4-XCG"/>
+                                        </constraints>
+                                    </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DE-7n-FcN">
                                         <rect key="frame" x="311" y="14.5" width="60" height="30"/>
                                         <constraints>
@@ -95,12 +104,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="4DE-7n-FcN" firstAttribute="leading" secondItem="aQC-za-9g4" secondAttribute="trailing" constant="4" id="9bl-hx-7Jd"/>
+                                    <constraint firstAttribute="trailing" secondItem="FGZ-w2-bls" secondAttribute="trailing" constant="70" id="DLt-5j-43E"/>
                                     <constraint firstAttribute="height" constant="60" id="HeT-gL-n2Z"/>
+                                    <constraint firstItem="FGZ-w2-bls" firstAttribute="leading" secondItem="ZLb-8b-O7y" secondAttribute="leading" constant="50" id="KpL-0a-O50"/>
                                     <constraint firstItem="ryR-Br-64C" firstAttribute="leading" secondItem="ZLb-8b-O7y" secondAttribute="leading" constant="15" id="Lic-Dg-g1T"/>
                                     <constraint firstItem="aQC-za-9g4" firstAttribute="leading" secondItem="ryR-Br-64C" secondAttribute="trailing" constant="4" id="MW4-ci-HdK"/>
                                     <constraint firstItem="ryR-Br-64C" firstAttribute="centerY" secondItem="ZLb-8b-O7y" secondAttribute="centerY" id="Rbj-Iq-pw2"/>
                                     <constraint firstItem="aQC-za-9g4" firstAttribute="centerY" secondItem="ZLb-8b-O7y" secondAttribute="centerY" id="dWy-c3-gG5"/>
                                     <constraint firstAttribute="trailing" secondItem="4DE-7n-FcN" secondAttribute="trailing" constant="4" id="lEs-yg-tet"/>
+                                    <constraint firstItem="FGZ-w2-bls" firstAttribute="centerY" secondItem="ZLb-8b-O7y" secondAttribute="centerY" id="s8l-Pb-fFY"/>
                                     <constraint firstItem="4DE-7n-FcN" firstAttribute="centerY" secondItem="ZLb-8b-O7y" secondAttribute="centerY" id="zZz-ha-p75"/>
                                 </constraints>
                             </view>
@@ -128,26 +140,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="R6F-BQ-x1z" firstAttribute="top" secondItem="UKr-Jt-WYt" secondAttribute="bottom" id="4ht-Qe-Szo"/>
                             <constraint firstAttribute="trailing" secondItem="mOh-0C-65u" secondAttribute="trailing" id="5Yp-GM-TwO"/>
                             <constraint firstItem="GaI-52-iO0" firstAttribute="leading" secondItem="us1-Cm-srk" secondAttribute="leading" id="8El-5M-bvE"/>
                             <constraint firstItem="mOh-0C-65u" firstAttribute="leading" secondItem="us1-Cm-srk" secondAttribute="leading" id="Dev-H2-dvL"/>
                             <constraint firstItem="ZLb-8b-O7y" firstAttribute="leading" secondItem="us1-Cm-srk" secondAttribute="leading" id="ECX-1F-ikU"/>
-                            <constraint firstAttribute="trailing" secondItem="UKr-Jt-WYt" secondAttribute="trailing" id="OwY-Tr-9Mt"/>
-                            <constraint firstItem="ZLb-8b-O7y" firstAttribute="top" secondItem="UKr-Jt-WYt" secondAttribute="bottom" id="VAQ-ef-MDT"/>
+                            <constraint firstItem="UKr-Jt-WYt" firstAttribute="leading" secondItem="us1-Cm-srk" secondAttribute="leading" id="IhE-4Q-kfP"/>
+                            <constraint firstItem="UKr-Jt-WYt" firstAttribute="top" secondItem="mOh-0C-65u" secondAttribute="bottom" id="Rm2-vU-Iux"/>
                             <constraint firstAttribute="trailing" secondItem="ZLb-8b-O7y" secondAttribute="trailing" id="VsY-2y-Dmb"/>
                             <constraint firstItem="GaI-52-iO0" firstAttribute="top" secondItem="mOh-0C-65u" secondAttribute="bottom" id="W5m-c9-93z"/>
                             <constraint firstItem="R6F-BQ-x1z" firstAttribute="top" secondItem="GaI-52-iO0" secondAttribute="bottom" id="Xak-Z2-hfW"/>
-                            <constraint firstItem="UKr-Jt-WYt" firstAttribute="leading" secondItem="us1-Cm-srk" secondAttribute="leading" id="cTD-tz-6Ru"/>
                             <constraint firstItem="R6F-BQ-x1z" firstAttribute="top" secondItem="ZLb-8b-O7y" secondAttribute="bottom" id="iZ2-yv-Szk"/>
                             <constraint firstAttribute="trailing" secondItem="GaI-52-iO0" secondAttribute="trailing" id="lEp-XP-clK"/>
-                            <constraint firstItem="UKr-Jt-WYt" firstAttribute="top" secondItem="mOh-0C-65u" secondAttribute="bottom" id="ni1-l8-19r"/>
                             <constraint firstItem="mOh-0C-65u" firstAttribute="top" secondItem="ido-fS-i3S" secondAttribute="bottom" id="pma-cv-aK0"/>
+                            <constraint firstAttribute="trailing" secondItem="UKr-Jt-WYt" secondAttribute="trailing" id="tB0-hm-zvl"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bottomView" destination="ZLb-8b-O7y" id="Tkm-iN-ELs"/>
+                        <outlet property="bottomViewBottomConstraint" destination="iZ2-yv-Szk" id="q9r-X8-IFu"/>
+                        <outlet property="bottomViewHeight" destination="HeT-gL-n2Z" id="pDL-wb-Imq"/>
                         <outlet property="nameLabel" destination="AXL-HS-cfv" id="59j-4U-tGb"/>
+                        <outlet property="playProgress" destination="FGZ-w2-bls" id="7W4-DB-HhG"/>
                         <outlet property="playerView" destination="UKr-Jt-WYt" id="5ol-Pu-HtC"/>
                         <outlet property="progressSlider" destination="aQC-za-9g4" id="dsM-6P-3jS"/>
                         <outlet property="stopOrPlayButton" destination="ryR-Br-64C" id="wYR-Dt-TFO"/>
