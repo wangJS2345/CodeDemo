@@ -13,6 +13,7 @@
 #define WPS_Office @"KingsoftOfficeApp://"
 
 #import "CDRootTVC.h"
+#import "GKVLCPlayVC.h"
 
 @interface CDRootTVC ()
 
@@ -44,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    return 6;
+    return 7;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 4) {
@@ -73,6 +74,13 @@
 */
         [self shareFile:fileName];
         
+    }
+    
+    if (indexPath.row == 6) {
+        UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"video" bundle:nil];
+        GKVLCPlayVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"GKVLCPlayVC"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadVideoVC"];
+        [self.navigationController pushViewController:controller animated:NO];
     }
 }
 - (void)shareFile:(NSString *)string {

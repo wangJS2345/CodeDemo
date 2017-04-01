@@ -1,12 +1,15 @@
 PODS:
   - MBProgressHUD (1.0.0)
+  - MobileVLCKit (2.2.2)
 
 DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
+  - MobileVLCKit (~> 2.2.1)
 
 SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MobileVLCKit: 75c2c36b0e3478c3f18cac3a2e7fa127cda0ff92
 
-PODFILE CHECKSUM: cf89f9a2fa7ad4bd43faded404b37675ad8b540d
+PODFILE CHECKSUM: 753048dcdd677169b9d2e937b2ae42f1f6d42300
 
 COCOAPODS: 1.2.1.beta.1
