@@ -1,5 +1,5 @@
 //
-//  GKVLCPlayVC.h
+//  CDVLCPlayVC.h
 //  GKtfp
 //
 //  Created by apple on 2017/3/31.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GKVLCPlayVC : UIViewController
+@interface CDVLCPlayVC : UIViewController
 @property (nonatomic,copy)NSDictionary *dictionary;
 
 @end

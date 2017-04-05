@@ -12,7 +12,7 @@
         <!--PlayVC-->
         <scene sceneID="6On-Yb-PEC">
             <objects>
-                <viewController storyboardIdentifier="GKVLCPlayVC" id="JiT-8F-A27" customClass="GKVLCPlayVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CDVLCPlayVC" id="JiT-8F-A27" customClass="CDVLCPlayVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ido-fS-i3S"/>
                         <viewControllerLayoutGuide type="bottom" id="R6F-BQ-x1z"/>

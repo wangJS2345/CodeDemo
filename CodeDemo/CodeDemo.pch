@@ -18,5 +18,6 @@
 #define ZhuantiZiyuan_Finder @"zhuanti"
 
 #import "MobileVLCKit/MobileVLCKit.h"
-#define Video_URL @"http://t600.com.cn:7777/upload/2017/0324/b28898e53b9f4f7e82f5f992ef2c50c9.mp4"
+//#define Video_URL @"http://t600.com.cn:7777/upload/2017/0324/b28898e53b9f4f7e82f5f992ef2c50c9.mp4"
+#define Video_URL @"http://www.iqiyi.com/v_19rrmosulo.html"
 #endif /* CodeDemo_pch */

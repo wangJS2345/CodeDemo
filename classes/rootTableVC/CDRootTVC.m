@@ -13,7 +13,7 @@
 #define WPS_Office @"KingsoftOfficeApp://"
 
 #import "CDRootTVC.h"
-#import "GKVLCPlayVC.h"
+#import "CDVLCPlayVC.h"
 
 @interface CDRootTVC ()
 
@@ -78,7 +78,7 @@
     
     if (indexPath.row == 6) {
         UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"video" bundle:nil];
-        GKVLCPlayVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"GKVLCPlayVC"];
+        CDVLCPlayVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"CDVLCPlayVC"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadVideoVC"];
         [self.navigationController pushViewController:controller animated:NO];
     }

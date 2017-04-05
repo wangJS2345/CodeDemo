@@ -11,7 +11,7 @@
 		181FBB6E1E8F2BCC00FAC61E /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 181FBB6D1E8F2BCC00FAC61E /* libbz2.tbd */; };
 		181FBB701E8F2BD300FAC61E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 181FBB6F1E8F2BD300FAC61E /* libiconv.tbd */; };
 		181FBB721E8F2BDA00FAC61E /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 181FBB711E8F2BDA00FAC61E /* libstdc++.6.0.9.tbd */; };
-		1825EEAC1E8F29FC00891636 /* GKVLCPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825EEAA1E8F29FC00891636 /* GKVLCPlayVC.m */; };
+		1825EEAC1E8F29FC00891636 /* CDVLCPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1825EEAA1E8F29FC00891636 /* CDVLCPlayVC.m */; };
 		1825EEAD1E8F29FC00891636 /* video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1825EEAB1E8F29FC00891636 /* video.storyboard */; };
 		182AAB531E70EAB500D3FC43 /* files.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182AAB521E70EAB500D3FC43 /* files.plist */; };
 		182AAB571E70EC5D00D3FC43 /* PoemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB561E70EC5D00D3FC43 /* PoemModel.m */; };
@@ -67,8 +67,8 @@
 		181FBB6D1E8F2BCC00FAC61E /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		181FBB6F1E8F2BD300FAC61E /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		181FBB711E8F2BDA00FAC61E /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		1825EEA91E8F29FC00891636 /* GKVLCPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKVLCPlayVC.h; sourceTree = "<group>"; };
-		1825EEAA1E8F29FC00891636 /* GKVLCPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKVLCPlayVC.m; sourceTree = "<group>"; };
+		1825EEA91E8F29FC00891636 /* CDVLCPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVLCPlayVC.h; sourceTree = "<group>"; };
+		1825EEAA1E8F29FC00891636 /* CDVLCPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVLCPlayVC.m; sourceTree = "<group>"; };
 		1825EEAB1E8F29FC00891636 /* video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = video.storyboard; sourceTree = "<group>"; };
 		182AAB521E70EAB500D3FC43 /* files.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = files.plist; sourceTree = "<group>"; };
 		182AAB551E70EC5D00D3FC43 /* PoemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoemModel.h; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 		1825EEA81E8F29D100891636 /* row6 */ = {
 			isa = PBXGroup;
 			children = (
-				1825EEA91E8F29FC00891636 /* GKVLCPlayVC.h */,
-				1825EEAA1E8F29FC00891636 /* GKVLCPlayVC.m */,
+				1825EEA91E8F29FC00891636 /* CDVLCPlayVC.h */,
+				1825EEAA1E8F29FC00891636 /* CDVLCPlayVC.m */,
 				1825EEAB1E8F29FC00891636 /* video.storyboard */,
 			);
 			path = row6;
@@ -611,7 +611,7 @@
 				188649051E7BB4BD000BAE7F /* AFNetworkReachabilityManager.m in Sources */,
 				182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */,
 				1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */,
-				1825EEAC1E8F29FC00891636 /* GKVLCPlayVC.m in Sources */,
+				1825EEAC1E8F29FC00891636 /* CDVLCPlayVC.m in Sources */,
 				188649081E7BB4BD000BAE7F /* AFURLResponseSerialization.m in Sources */,
 				188649071E7BB4BD000BAE7F /* AFURLRequestSerialization.m in Sources */,
 				188649061E7BB4BD000BAE7F /* AFSecurityPolicy.m in Sources */,

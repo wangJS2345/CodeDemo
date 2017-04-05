@@ -1,15 +1,15 @@
 //
-//  GKVLCPlayVC.m
+//  CDVLCPlayVC.m
 //  GKtfp
 //
 //  Created by apple on 2017/3/31.
 //  Copyright © 2017年 LYP. All rights reserved.
 //
 
-#import "GKVLCPlayVC.h"
+#import "CDVLCPlayVC.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface GKVLCPlayVC () <VLCMediaPlayerDelegate,VLCMediaThumbnailerDelegate,VLCMediaDelegate>
+@interface CDVLCPlayVC () <VLCMediaPlayerDelegate,VLCMediaThumbnailerDelegate,VLCMediaDelegate>
 {
     //正在播放：YES
     BOOL isPlaying;
@@ -75,7 +75,7 @@
 
 @end
 
-@implementation GKVLCPlayVC
+@implementation CDVLCPlayVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
