@@ -116,14 +116,15 @@
                                     <constraint firstItem="4DE-7n-FcN" firstAttribute="centerY" secondItem="ZLb-8b-O7y" secondAttribute="centerY" id="zZz-ha-p75"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaI-52-iO0">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaI-52-iO0">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jX-dE-LnD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jX-dE-LnD">
                                         <rect key="frame" x="0.0" y="153" width="375" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="ga9-JX-e88"/>
                                         </constraints>
+                                        <state key="normal" image="wait"/>
                                         <connections>
                                             <action selector="waitBtnClick:" destination="JiT-8F-A27" eventType="touchUpInside" id="eEr-8K-mxO"/>
                                         </connections>
@@ -179,6 +180,7 @@
     </scenes>
     <resources>
         <image name="play_start" width="30" height="30"/>
+        <image name="wait" width="16" height="16"/>
         <image name="whiteBack" width="22" height="22"/>
     </resources>
 </document>

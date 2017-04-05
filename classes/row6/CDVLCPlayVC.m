@@ -94,13 +94,14 @@
     _mediaPlayer.drawable = _playerView;
     _mediaPlayer.delegate = self;
     [_nameLabel setHidden:YES];
+    /*
     //获取缩略图
     //初始化并设置代理
     VLCMediaThumbnailer *thumbnailer = [VLCMediaThumbnailer thumbnailerWithMedia:media andDelegate:self];
     self.thumbnailer = thumbnailer;
     //开始获取缩略图
     [self.thumbnailer fetchThumbnail];
-    
+    */
     //开始播放
     [_mediaPlayer play];
     [self addGestureRecognizers];
@@ -220,6 +221,7 @@
     
 }
 - (void)mediaPlayerTimeChanged:(NSNotification *)aNotification {
+    [_waitView setHidden:YES];
     //获取当前的播放进度条
     NSString *currentString = [NSString stringWithFormat:@"%@",_mediaPlayer.time];
     NSString *remainingString = [NSString stringWithFormat:@"%@",_mediaPlayer.remainingTime];
