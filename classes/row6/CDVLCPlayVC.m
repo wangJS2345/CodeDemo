@@ -7,7 +7,7 @@
 //
 
 #import "CDVLCPlayVC.h"
-#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface CDVLCPlayVC () <VLCMediaPlayerDelegate,VLCMediaThumbnailerDelegate,VLCMediaDelegate>
 {
@@ -22,6 +22,14 @@
 @property (nonatomic ,retain)VLCMediaPlayer *mediaPlayer;
 //缩略图
 @property (nonatomic ,retain)VLCMediaThumbnailer *thumbnailer;
+
+
+@property (strong, nonatomic) MPVolumeView *volumeView;//控制音量的view
+@property (weak, nonatomic) IBOutlet UIButton *volumeBtn;
+- (IBAction)volumeClick:(UIButton *)sender;
+//音量
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
+- (IBAction)volumeValueChange:(UISlider *)sender;
 
 /****************************/
 //加载等待播放视图
@@ -49,17 +57,10 @@
 
 //暂停/继续播放
 - (IBAction)stopOrPlayClick:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet UISlider *progressSlider;
-- (IBAction)changeValue:(UISlider *)sender;
-- (IBAction)startChange:(UISlider *)sender;
-- (IBAction)stopChange:(UISlider *)sender;
-- (IBAction)changeEnd:(UISlider *)sender;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-//音量控制
-@property (nonatomic, strong) MPVolumeView *volumeView;
 
-@property (weak, nonatomic) IBOutlet UISlider *voiceSlider;
-- (IBAction)vioceValueChange:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+
 
 /*****************/
 //屏幕操作手势
@@ -81,13 +82,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _progressSlider.continuous = YES;
+    _volumeSlider.continuous = YES;
     NSString *url = Video_URL;
     _playURL = [NSURL URLWithString:url];
 
+    [self.volumeView setHidden:YES];
+    
     VLCMediaPlayer *player = [[VLCMediaPlayer alloc] initWithOptions:nil];
     _mediaPlayer = player;
+    
 
+    /*
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.mp3FileUrl error:nil];
+    
+    NSLog(@"%lu",self.player.data.length/1024);
+    [self.session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [self.player play];
+    */
     
     VLCMedia  *media = [VLCMedia mediaWithURL:_playURL];
     _mediaPlayer.media = media;
@@ -108,13 +119,14 @@
 
     //音量
     int volume = _mediaPlayer.audio.volume;
-    NSLog(@"volume----%d",volume);
-    [_voiceSlider setValue:volume];
+//    NSLog(@"volume----%d",volume);
+    [_volumeSlider setValue:volume];
 
     // 8秒后自动隐藏顶部和底部
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         isShowing = NO;
-        [_bottomView setHidden:YES];
+//        [_bottomView setHidden:YES];
+        [_waitView setHidden:YES];
     });
 }
 
@@ -133,22 +145,7 @@
 }
 */
 
-#pragma mark - 屏幕方向
-// 隐藏状态栏显得和谐
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
-- (BOOL)shouldAutorotate {    // 允许进行旋转
-    return YES;
-}
--(UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    //支持哪些转屏方向
-    return UIInterfaceOrientationMaskAllButUpsideDown;
-}
--(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    //进入界面直接旋转的方向
-    return UIInterfaceOrientationLandscapeLeft;
-}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -201,37 +198,80 @@
             break;
     }
 }
-- (IBAction)changeValue:(UISlider *)sender {
-//    [_mediaPlayer currentTitleIndex]
-    //设置播放进度, 0.0~1.0
-//    float sliderValue = sender.value;
-//    [_mediaPlayer setPosition:sliderValue];
-}
 
-- (IBAction)startChange:(UISlider *)sender {
-}
-
-- (IBAction)stopChange:(UISlider *)sender {
-}
-
-- (IBAction)changeEnd:(UISlider *)sender {
-}
 #pragma mark - VLCMediaPlayerDelegate
 - (void)mediaPlayerStateChanged:(NSNotification *)aNotification {
-    
+    /*
+     VLCMediaPlayerStateStopped,        //< Player has stopped
+     VLCMediaPlayerStateOpening,        //< Stream is opening
+     VLCMediaPlayerStateBuffering,      //< Stream is buffering
+     VLCMediaPlayerStateEnded,          //< Stream has ended
+     VLCMediaPlayerStateError,          //< Player has generated an error
+     VLCMediaPlayerStatePlaying,        //< Stream is playing
+     VLCMediaPlayerStatePaused          //< Stream is paused
+     */
+    switch (_mediaPlayer.state) {
+        case VLCMediaPlayerStateStopped:
+        {
+            NSLog(@"停止播放 VLCMediaPlayerStateStopped");
+        }
+            break;
+        case VLCMediaPlayerStateOpening:
+        {
+            NSLog(@"正在打开视频 VLCMediaPlayerStateOpening");
+        }
+            break;
+        case VLCMediaPlayerStateBuffering:
+        {
+            NSLog(@"正在缓冲 VLCMediaPlayerStateBuffering");
+        }
+            break;
+        case VLCMediaPlayerStateEnded:
+        {
+            NSLog(@"播放结束 VLCMediaPlayerStateEnded");
+        }
+            break;
+        case VLCMediaPlayerStateError:
+        {
+            NSLog(@"视频出错 VLCMediaPlayerStateError");
+        }
+            break;
+        case VLCMediaPlayerStatePlaying:
+        {
+            NSLog(@"视频正在播放 VLCMediaPlayerStatePlaying");
+        }
+            break;
+        case VLCMediaPlayerStatePaused:
+        {
+            NSLog(@"暂停播放 VLCMediaPlayerStatePaused");
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 - (void)mediaPlayerTimeChanged:(NSNotification *)aNotification {
-    [_waitView setHidden:YES];
     //获取当前的播放进度条
     NSString *currentString = [NSString stringWithFormat:@"%@",_mediaPlayer.time];
     NSString *remainingString = [NSString stringWithFormat:@"%@",_mediaPlayer.remainingTime];
     NSString *allTimeString = [NSString stringWithFormat:@"%@",_mediaPlayer.media.length];
 
     //播放进度 剩余时间
-//    [_progressSlider setValue:[currentString floatValue]/[allTimeString floatValue]];
     [_playProgress setProgress:[currentString floatValue]/[allTimeString floatValue]];
     _timeLabel.text = remainingString;
+    
+    //音量
+//    int volume = _mediaPlayer.audio.volume;
+//    NSLog(@"volume-----%d",volume);
+//    NSString *volumeString = [NSString stringWithFormat:@"%d",volume];
+//    [_volumeSlider setValue:[volumeString floatValue]];
+    float volume = _volumeSlider.value;
+    NSLog(@"volume-----%f",volume);
+    NSString *volumeString = [NSString stringWithFormat:@"%f",volume];
+    [_mediaPlayer.audio setVolume:[volumeString intValue]];
 }
+
 - (IBAction)waitBtnClick:(UIButton *)sender {
 }
 #pragma mark - 获取缩略图
@@ -246,7 +286,6 @@
     [_waitButton setImage:image forState:UIControlStateNormal];
     // 5秒后自动隐藏顶部和底部
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [_waitView setHidden:YES];
         isPlaying = NO;
     });
 }
@@ -259,13 +298,13 @@
 //        [_mediaPlayer pause];
 ////        [timer];
 //        //播放模式，改为暂停
-//        _stopOrPlayButton.tag = 21;
-//        [_stopOrPlayButton setImage:[UIImage imageNamed:@"play_stop.png"] forState:UIControlStateNormal];
+        _stopOrPlayButton.tag = 21;
+        [_stopOrPlayButton setImage:[UIImage imageNamed:@"play_stop.png"] forState:UIControlStateNormal];
     }else {
 //        [_mediaPlayer play];
 //        //暂停模式，继续播放
-//        _stopOrPlayButton.tag = 20;
-//        [_stopOrPlayButton setImage:[UIImage imageNamed:@"play_start.png"] forState:UIControlStateNormal];
+        _stopOrPlayButton.tag = 20;
+        [_stopOrPlayButton setImage:[UIImage imageNamed:@"play_start.png"] forState:UIControlStateNormal];
     }
 
     //显示或隐藏顶部底部
@@ -321,10 +360,10 @@
     self.rightGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [_playerView addGestureRecognizer:self.rightGestureRecognizer];
 }
+
 - (void)upGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
     NSLog(@"上上上上上上上");
     [_mediaPlayer.audio volumeUp];
-
 }
 - (void)downGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer {
     NSLog(@"下下下下下下下");
@@ -361,18 +400,76 @@
     NSLog(@"%f==%f",touchPoint.x,touchPoint.y);
 }
 
-- (IBAction)vioceValueChange:(UISlider *)sender {
-//    avAudioPlayer.volume = volumeSlider.value;
-    UISlider *slider = (UISlider *)sender;
-//    _mediaPlayer.media.version
-    [_mediaPlayer.audio setVolume:slider.value];
-}
-
 
 //返回按钮
 - (IBAction)backAndStopClick:(UIButton *)sender{
     [_mediaPlayer stop];
     //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadVideoVC"];
     [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma mark - 屏幕方向
+// 隐藏状态栏显得和谐
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+- (BOOL)shouldAutorotate {    // 允许进行旋转
+    return YES;
+}
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    //支持哪些转屏方向
+    return UIInterfaceOrientationMaskLandscape;
+}
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    //进入界面直接旋转的方向
+    return UIInterfaceOrientationLandscapeLeft;
+}
+
+#pragma mark - 懒加载
+- (MPVolumeView *)volumeView {
+    if (_volumeView == nil) {
+        
+        _volumeView = [[MPVolumeView alloc] init];
+        UISlider *volumeSlider = nil;
+        for (id aView in _volumeView.subviews){
+            if ([[[aView class] description] isEqualToString:@"MPVolumeSlider"]){
+                
+                volumeSlider = (UISlider *)aView;
+                break;
+            }
+            
+        }
+    }
+    return _volumeView;
+}
+
+#pragma mark - 音量
+
+- (IBAction)volumeClick:(UIButton *)sender {
+    UIButton *button = (UIButton *)sender;
+
+    switch (button.tag) {
+        case 30:{
+            button.tag = 31;
+//            [_waitView setHidden:NO];
+//            [btn setImage:[UIImage imageNamed:@"play_stop.png"] forState:UIControlStateNormal];
+//            [_mediaPlayer pause];
+        }
+            break;
+        case 31:{
+            button.tag = 30;
+//            [_waitView setHidden:YES];
+//            [btn setImage:[UIImage imageNamed:@"play_start.png"] forState:UIControlStateNormal];
+//            [_mediaPlayer play];
+        }
+            break;
+        default:
+            break;
+    }
+}
+- (IBAction)volumeValueChange:(UISlider *)sender {
+     float volume = _volumeSlider.value;
+    NSLog(@"volume-----%f",volume);
+    NSString *volumeString = [NSString stringWithFormat:@"%f",volume];
+    [_mediaPlayer.audio setVolume:[volumeString intValue]];
 }
 @end
