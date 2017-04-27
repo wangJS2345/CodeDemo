@@ -45,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    return 7;
+    return 8;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 4) {
@@ -81,6 +81,12 @@
         CDVLCPlayVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"CDVLCPlayVC"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadVideoVC"];
         [self.navigationController pushViewController:controller animated:NO];
+    }
+    if (indexPath.row == 7) {
+        UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        CDNewWebViewController * controller = [storyboard instantiateViewControllerWithIdentifier:@"CDNewWebViewController"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadVideoVC"];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 - (void)shareFile:(NSString *)string {

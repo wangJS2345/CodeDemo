@@ -37,6 +37,7 @@
 		188649071E7BB4BD000BAE7F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 188648FF1E7BB4BD000BAE7F /* AFURLRequestSerialization.m */; };
 		188649081E7BB4BD000BAE7F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 188649011E7BB4BD000BAE7F /* AFURLResponseSerialization.m */; };
 		188649091E7BB4BD000BAE7F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188649031E7BB4BD000BAE7F /* AFURLSessionManager.m */; };
+		18C2E2171EB1C3B90097A642 /* CDNewWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C2E2161EB1C3B90097A642 /* CDNewWebViewController.m */; };
 		18E8C6621E7BAF6100592BE2 /* CDRowFiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8C6611E7BAF6100592BE2 /* CDRowFiveVC.m */; };
 		18F7C8B11E6D1AAB00EF8888 /* ClickBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B01E6D1AAB00EF8888 /* ClickBoxViewController.m */; };
 		18F7C8B41E6D24F100EF8888 /* CheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B31E6D24F100EF8888 /* CheckButton.m */; };
@@ -115,6 +116,8 @@
 		188649011E7BB4BD000BAE7F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		188649021E7BB4BD000BAE7F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		188649031E7BB4BD000BAE7F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		18C2E2151EB1C3B90097A642 /* CDNewWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewWebViewController.h; sourceTree = "<group>"; };
+		18C2E2161EB1C3B90097A642 /* CDNewWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewWebViewController.m; sourceTree = "<group>"; };
 		18E8C65E1E7BAD1B00592BE2 /* CodeDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeDemo.pch; sourceTree = "<group>"; };
 		18E8C6601E7BAF6100592BE2 /* CDRowFiveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowFiveVC.h; sourceTree = "<group>"; };
 		18E8C6611E7BAF6100592BE2 /* CDRowFiveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowFiveVC.m; sourceTree = "<group>"; };
@@ -215,6 +218,7 @@
 		1879FD5E1E695C9D003630C7 = {
 			isa = PBXGroup;
 			children = (
+				188514A51E9610DD007B900F /* 第三方 */,
 				185EE4CD1E79609C00AB59FF /* 资源 */,
 				1879FD9D1E695CB7003630C7 /* classes */,
 				1879FD691E695C9D003630C7 /* CodeDemo */,
@@ -283,6 +287,7 @@
 		1879FD9D1E695CB7003630C7 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				18C2E2141EB1C3A40097A642 /* row7 */,
 				1825EEA81E8F29D100891636 /* row6 */,
 				18E8C65F1E7BAF3D00592BE2 /* row5 */,
 				1848C7971E72364300479347 /* row3 */,
@@ -335,6 +340,13 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		188514A51E9610DD007B900F /* 第三方 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "第三方";
+			sourceTree = "<group>";
+		};
 		188648F51E7BB4BD000BAE7F /* network */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +373,15 @@
 				188649031E7BB4BD000BAE7F /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		18C2E2141EB1C3A40097A642 /* row7 */ = {
+			isa = PBXGroup;
+			children = (
+				18C2E2151EB1C3B90097A642 /* CDNewWebViewController.h */,
+				18C2E2161EB1C3B90097A642 /* CDNewWebViewController.m */,
+			);
+			path = row7;
 			sourceTree = "<group>";
 		};
 		18E8C65F1E7BAF3D00592BE2 /* row5 */ = {
@@ -612,6 +633,7 @@
 				182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */,
 				1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */,
 				1825EEAC1E8F29FC00891636 /* CDVLCPlayVC.m in Sources */,
+				18C2E2171EB1C3B90097A642 /* CDNewWebViewController.m in Sources */,
 				188649081E7BB4BD000BAE7F /* AFURLResponseSerialization.m in Sources */,
 				188649071E7BB4BD000BAE7F /* AFURLRequestSerialization.m in Sources */,
 				188649061E7BB4BD000BAE7F /* AFSecurityPolicy.m in Sources */,
