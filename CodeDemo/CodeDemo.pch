@@ -22,4 +22,6 @@
 //#define Video_URL @"http://www.iqiyi.com/v_19rrmosulo.html"
 
 #import "CDNewWebViewController.h"
+#import <AVFoundation/AVFoundation.h>
+
 #endif /* CodeDemo_pch */

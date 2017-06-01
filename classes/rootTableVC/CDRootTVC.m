@@ -14,6 +14,9 @@
 
 #import "CDRootTVC.h"
 #import "CDVLCPlayVC.h"
+//二维码
+#import "NativeQRCodeVC.h"
+#import "QRCodetabbarVC.h"
 
 @interface CDRootTVC ()
 
@@ -86,6 +89,13 @@
         UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         CDNewWebViewController * controller = [storyboard instantiateViewControllerWithIdentifier:@"CDNewWebViewController"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loadVideoVC"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    if (indexPath.row == 8) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"QRCode" bundle:nil];
+//        NativeQRCodeVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"NativeQRCodeVC"];
+        QRCodetabbarVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"QRCodetabbarVC"];
+        
         [self.navigationController pushViewController:controller animated:YES];
     }
 }

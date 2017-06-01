@@ -17,6 +17,10 @@
 		182AAB571E70EC5D00D3FC43 /* PoemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB561E70EC5D00D3FC43 /* PoemModel.m */; };
 		182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */; };
 		182AAB5C1E70EDA700D3FC43 /* CDRowZeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */; };
+		1838BA5A1EDFBF3400DB6A34 /* NativeQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838BA591EDFBF3400DB6A34 /* NativeQRCodeVC.m */; };
+		1838BA5C1EDFBF4800DB6A34 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1838BA5B1EDFBF4800DB6A34 /* QRCode.storyboard */; };
+		1838BA5F1EDFC70D00DB6A34 /* QRCodetabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838BA5E1EDFC70D00DB6A34 /* QRCodetabbarVC.m */; };
+		1838BA611EDFDF3B00DB6A34 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1838BA601EDFDF3B00DB6A34 /* AVFoundation.framework */; };
 		1848C79A1E72365200479347 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848C7991E72365200479347 /* ImageViewController.m */; };
 		1848C79D1E72398000479347 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1848C79C1E72398000479347 /* MobileCoreServices.framework */; };
 		185EE4CF1E7960A200AB59FF /* 测试文档.doc in Resources */ = {isa = PBXBuildFile; fileRef = 185EE4CE1E7960A200AB59FF /* 测试文档.doc */; };
@@ -77,6 +81,12 @@
 		182AAB581E70EDA700D3FC43 /* CDRowZeroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRowZeroCell.h; sourceTree = "<group>"; };
 		182AAB591E70EDA700D3FC43 /* CDRowZeroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRowZeroCell.m; sourceTree = "<group>"; };
 		182AAB5A1E70EDA700D3FC43 /* CDRowZeroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDRowZeroCell.xib; sourceTree = "<group>"; };
+		1838BA581EDFBF3400DB6A34 /* NativeQRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeQRCodeVC.h; sourceTree = "<group>"; };
+		1838BA591EDFBF3400DB6A34 /* NativeQRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeQRCodeVC.m; sourceTree = "<group>"; };
+		1838BA5B1EDFBF4800DB6A34 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		1838BA5D1EDFC70D00DB6A34 /* QRCodetabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodetabbarVC.h; sourceTree = "<group>"; };
+		1838BA5E1EDFC70D00DB6A34 /* QRCodetabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodetabbarVC.m; sourceTree = "<group>"; };
+		1838BA601EDFDF3B00DB6A34 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1848C7981E72365200479347 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		1848C7991E72365200479347 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		1848C79C1E72398000479347 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -139,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1838BA611EDFDF3B00DB6A34 /* AVFoundation.framework in Frameworks */,
 				181FBB721E8F2BDA00FAC61E /* libstdc++.6.0.9.tbd in Frameworks */,
 				181FBB701E8F2BD300FAC61E /* libiconv.tbd in Frameworks */,
 				181FBB6E1E8F2BCC00FAC61E /* libbz2.tbd in Frameworks */,
@@ -184,6 +195,26 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		1838BA561EDFBEDA00DB6A34 /* 二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				1838BA571EDFBEE400DB6A34 /* 原生 */,
+				1838BA5B1EDFBF4800DB6A34 /* QRCode.storyboard */,
+				1838BA5D1EDFC70D00DB6A34 /* QRCodetabbarVC.h */,
+				1838BA5E1EDFC70D00DB6A34 /* QRCodetabbarVC.m */,
+			);
+			path = "二维码";
+			sourceTree = "<group>";
+		};
+		1838BA571EDFBEE400DB6A34 /* 原生 */ = {
+			isa = PBXGroup;
+			children = (
+				1838BA581EDFBF3400DB6A34 /* NativeQRCodeVC.h */,
+				1838BA591EDFBF3400DB6A34 /* NativeQRCodeVC.m */,
+			);
+			path = "原生";
+			sourceTree = "<group>";
+		};
 		1848C7971E72364300479347 /* row3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +227,7 @@
 		1848C79B1E72398000479347 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1838BA601EDFDF3B00DB6A34 /* AVFoundation.framework */,
 				181FBB711E8F2BDA00FAC61E /* libstdc++.6.0.9.tbd */,
 				181FBB6F1E8F2BD300FAC61E /* libiconv.tbd */,
 				181FBB6D1E8F2BCC00FAC61E /* libbz2.tbd */,
@@ -287,6 +319,7 @@
 		1879FD9D1E695CB7003630C7 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				1838BA561EDFBEDA00DB6A34 /* 二维码 */,
 				18C2E2141EB1C3A40097A642 /* row7 */,
 				1825EEA81E8F29D100891636 /* row6 */,
 				18E8C65F1E7BAF3D00592BE2 /* row5 */,
@@ -549,6 +582,7 @@
 				1879FD7A1E695C9D003630C7 /* LaunchScreen.storyboard in Resources */,
 				1879FD771E695C9D003630C7 /* Assets.xcassets in Resources */,
 				185EE4CF1E7960A200AB59FF /* 测试文档.doc in Resources */,
+				1838BA5C1EDFBF4800DB6A34 /* QRCode.storyboard in Resources */,
 				1879FD751E695C9D003630C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,6 +678,8 @@
 				188649041E7BB4BD000BAE7F /* AFHTTPSessionManager.m in Sources */,
 				1879FDA91E695E22003630C7 /* CDRowZeroTVC.m in Sources */,
 				18F7C8B41E6D24F100EF8888 /* CheckButton.m in Sources */,
+				1838BA5F1EDFC70D00DB6A34 /* QRCodetabbarVC.m in Sources */,
+				1838BA5A1EDFBF3400DB6A34 /* NativeQRCodeVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

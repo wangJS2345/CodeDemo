@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--二维码-->
+        <scene sceneID="PJ2-8I-1Sk">
+            <objects>
+                <viewController storyboardIdentifier="NativeQRCodeVC" id="trT-V1-TCU" customClass="NativeQRCodeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C8r-70-Lpa"/>
+                        <viewControllerLayoutGuide type="bottom" id="g5v-lu-Txb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lYx-My-Dpk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scan_borders" translatesAutoresizingMaskIntoConstraints="NO" id="dWu-Dw-kl7">
+                                <rect key="frame" x="77.5" y="223.5" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="1mi-sI-ivn"/>
+                                    <constraint firstAttribute="width" constant="220" id="nbu-Nx-Jcm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4p-6z-S8h">
+                                <rect key="frame" x="77" y="493.5" width="220" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="O30-dO-MhK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h4p-6z-S8h" firstAttribute="centerX" secondItem="lYx-My-Dpk" secondAttribute="centerX" id="2DI-yf-GVT"/>
+                            <constraint firstItem="h4p-6z-S8h" firstAttribute="width" secondItem="dWu-Dw-kl7" secondAttribute="width" id="7c6-Oi-j2o"/>
+                            <constraint firstItem="h4p-6z-S8h" firstAttribute="top" secondItem="dWu-Dw-kl7" secondAttribute="bottom" constant="50" id="HFE-bM-naB"/>
+                            <constraint firstItem="dWu-Dw-kl7" firstAttribute="centerY" secondItem="lYx-My-Dpk" secondAttribute="centerY" id="ech-0i-0nP"/>
+                            <constraint firstItem="dWu-Dw-kl7" firstAttribute="centerX" secondItem="lYx-My-Dpk" secondAttribute="centerX" id="kT9-JF-lQw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="二维码" image="erweima" id="AqE-Zg-BWm"/>
+                    <connections>
+                        <outlet property="scanResult" destination="h4p-6z-S8h" id="59A-YZ-gcv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUb-Ha-Gm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="-141"/>
+        </scene>
+        <!--CodetabbarVC-->
+        <scene sceneID="Pdn-e1-JUp">
+            <objects>
+                <tabBarController storyboardIdentifier="QRCodetabbarVC" id="e81-x0-0h5" customClass="QRCodetabbarVC" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9uX-vG-OV0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="trT-V1-TCU" kind="relationship" relationship="viewControllers" id="XYA-1O-KEX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WI-GX-Uxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-399" y="187"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="erweima" width="30" height="30"/>
+        <image name="scan_borders" width="220" height="220"/>
+    </resources>
+</document>
