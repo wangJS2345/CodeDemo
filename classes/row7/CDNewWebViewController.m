@@ -109,11 +109,11 @@
         [JSContext currentContext];
     };
     
-    jsContext[@"sendMessage3"] = ^(){
-        //点击游客登录
-        NSLog(@"sendMessage3");
-        [JSContext currentContext];
-    };
+//    jsContext[@"sendMessage3"] = ^(){
+//        //点击游客登录
+//        NSLog(@"sendMessage3");
+//        [JSContext currentContext];
+//    };
     jsContext[@"sendMessage22"] = ^(){
         //点击游客登录
         NSLog(@"sendMessage22");

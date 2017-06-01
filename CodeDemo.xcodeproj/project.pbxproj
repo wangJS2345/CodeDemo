@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180ECDD41EB81991006EAECC /* Title.html in Resources */ = {isa = PBXBuildFile; fileRef = 180ECDD31EB81991006EAECC /* Title.html */; };
 		181FBB6C1E8F2BC300FAC61E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 181FBB6B1E8F2BC300FAC61E /* libz.tbd */; };
 		181FBB6E1E8F2BCC00FAC61E /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 181FBB6D1E8F2BCC00FAC61E /* libbz2.tbd */; };
 		181FBB701E8F2BD300FAC61E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 181FBB6F1E8F2BD300FAC61E /* libiconv.tbd */; };
@@ -65,7 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		180ECDD31EB81991006EAECC /* Title.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Title.html; path = ../../../../Title.html; sourceTree = "<group>"; };
 		181FBB6B1E8F2BC300FAC61E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		181FBB6D1E8F2BCC00FAC61E /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		181FBB6F1E8F2BD300FAC61E /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -380,7 +378,6 @@
 		18C2E2141EB1C3A40097A642 /* row7 */ = {
 			isa = PBXGroup;
 			children = (
-				180ECDD31EB81991006EAECC /* Title.html */,
 				18C2E2151EB1C3B90097A642 /* CDNewWebViewController.h */,
 				18C2E2161EB1C3B90097A642 /* CDNewWebViewController.m */,
 			);
@@ -553,7 +550,6 @@
 				1879FD771E695C9D003630C7 /* Assets.xcassets in Resources */,
 				185EE4CF1E7960A200AB59FF /* 测试文档.doc in Resources */,
 				1879FD751E695C9D003630C7 /* Main.storyboard in Resources */,
-				180ECDD41EB81991006EAECC /* Title.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
