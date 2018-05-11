@@ -41,6 +41,11 @@
 		188649071E7BB4BD000BAE7F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 188648FF1E7BB4BD000BAE7F /* AFURLRequestSerialization.m */; };
 		188649081E7BB4BD000BAE7F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 188649011E7BB4BD000BAE7F /* AFURLResponseSerialization.m */; };
 		188649091E7BB4BD000BAE7F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188649031E7BB4BD000BAE7F /* AFURLSessionManager.m */; };
+		18A452AF20A52B0E00A5D624 /* TTSPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A452AE20A52B0E00A5D624 /* TTSPlay.m */; };
+		18A452F520A52F5D00A5D624 /* ExtendDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A452F420A52F5D00A5D624 /* ExtendDelegate.m */; };
+		18A452FC20A530C500A5D624 /* HeightChangeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A452FB20A530C500A5D624 /* HeightChangeTextView.swift */; };
+		18A4530020A531AC00A5D624 /* HexWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A452FF20A531AC00A5D624 /* HexWithColor.m */; };
+		18A4530220A531DB00A5D624 /* GRBWithColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4530120A531DB00A5D624 /* GRBWithColor.swift */; };
 		18C2E2171EB1C3B90097A642 /* CDNewWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C2E2161EB1C3B90097A642 /* CDNewWebViewController.m */; };
 		18E8C6621E7BAF6100592BE2 /* CDRowFiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8C6611E7BAF6100592BE2 /* CDRowFiveVC.m */; };
 		18F7C8B11E6D1AAB00EF8888 /* ClickBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C8B01E6D1AAB00EF8888 /* ClickBoxViewController.m */; };
@@ -126,6 +131,15 @@
 		188649011E7BB4BD000BAE7F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		188649021E7BB4BD000BAE7F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		188649031E7BB4BD000BAE7F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		18A452AD20A52B0E00A5D624 /* TTSPlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTSPlay.h; sourceTree = "<group>"; };
+		18A452AE20A52B0E00A5D624 /* TTSPlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTSPlay.m; sourceTree = "<group>"; };
+		18A452F320A52F5D00A5D624 /* ExtendDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtendDelegate.h; sourceTree = "<group>"; };
+		18A452F420A52F5D00A5D624 /* ExtendDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtendDelegate.m; sourceTree = "<group>"; };
+		18A452FA20A530C500A5D624 /* CodeDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		18A452FB20A530C500A5D624 /* HeightChangeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightChangeTextView.swift; sourceTree = "<group>"; };
+		18A452FE20A531AC00A5D624 /* HexWithColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HexWithColor.h; sourceTree = "<group>"; };
+		18A452FF20A531AC00A5D624 /* HexWithColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HexWithColor.m; sourceTree = "<group>"; };
+		18A4530120A531DB00A5D624 /* GRBWithColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRBWithColor.swift; sourceTree = "<group>"; };
 		18C2E2151EB1C3B90097A642 /* CDNewWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNewWebViewController.h; sourceTree = "<group>"; };
 		18C2E2161EB1C3B90097A642 /* CDNewWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNewWebViewController.m; sourceTree = "<group>"; };
 		18E8C65E1E7BAD1B00592BE2 /* CodeDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeDemo.pch; sourceTree = "<group>"; };
@@ -250,7 +264,6 @@
 		1879FD5E1E695C9D003630C7 = {
 			isa = PBXGroup;
 			children = (
-				188514A51E9610DD007B900F /* 第三方 */,
 				185EE4CD1E79609C00AB59FF /* 资源 */,
 				1879FD9D1E695CB7003630C7 /* classes */,
 				1879FD691E695C9D003630C7 /* CodeDemo */,
@@ -319,6 +332,9 @@
 		1879FD9D1E695CB7003630C7 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				18A452EF20A52E7700A5D624 /* 资源 */,
+				18A452AB20A528F100A5D624 /* 扩展 */,
+				18A452A920A528A800A5D624 /* 友盟 */,
 				1838BA561EDFBEDA00DB6A34 /* 二维码 */,
 				18C2E2141EB1C3A40097A642 /* row7 */,
 				1825EEA81E8F29D100891636 /* row6 */,
@@ -373,13 +389,6 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
-		188514A51E9610DD007B900F /* 第三方 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "第三方";
-			sourceTree = "<group>";
-		};
 		188648F51E7BB4BD000BAE7F /* network */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +415,76 @@
 				188649031E7BB4BD000BAE7F /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		18A452A920A528A800A5D624 /* 友盟 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "友盟";
+			sourceTree = "<group>";
+		};
+		18A452AB20A528F100A5D624 /* 扩展 */ = {
+			isa = PBXGroup;
+			children = (
+				18A452FD20A5317B00A5D624 /* 颜色 */,
+				18A452F620A5308700A5D624 /* 输入框 */,
+				18A452F220A52F3100A5D624 /* 沙盒目录 */,
+				18A452AC20A5292300A5D624 /* tts播放 */,
+			);
+			path = "扩展";
+			sourceTree = "<group>";
+		};
+		18A452AC20A5292300A5D624 /* tts播放 */ = {
+			isa = PBXGroup;
+			children = (
+				18A452AD20A52B0E00A5D624 /* TTSPlay.h */,
+				18A452AE20A52B0E00A5D624 /* TTSPlay.m */,
+			);
+			path = "tts播放";
+			sourceTree = "<group>";
+		};
+		18A452EF20A52E7700A5D624 /* 资源 */ = {
+			isa = PBXGroup;
+			children = (
+				18A452F020A52E8F00A5D624 /* 音频 */,
+			);
+			path = "资源";
+			sourceTree = "<group>";
+		};
+		18A452F020A52E8F00A5D624 /* 音频 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "音频";
+			sourceTree = "<group>";
+		};
+		18A452F220A52F3100A5D624 /* 沙盒目录 */ = {
+			isa = PBXGroup;
+			children = (
+				18A452F320A52F5D00A5D624 /* ExtendDelegate.h */,
+				18A452F420A52F5D00A5D624 /* ExtendDelegate.m */,
+			);
+			path = "沙盒目录";
+			sourceTree = "<group>";
+		};
+		18A452F620A5308700A5D624 /* 输入框 */ = {
+			isa = PBXGroup;
+			children = (
+				18A452FB20A530C500A5D624 /* HeightChangeTextView.swift */,
+				18A452FA20A530C500A5D624 /* CodeDemo-Bridging-Header.h */,
+			);
+			path = "输入框";
+			sourceTree = "<group>";
+		};
+		18A452FD20A5317B00A5D624 /* 颜色 */ = {
+			isa = PBXGroup;
+			children = (
+				18A452FE20A531AC00A5D624 /* HexWithColor.h */,
+				18A452FF20A531AC00A5D624 /* HexWithColor.m */,
+				18A4530120A531DB00A5D624 /* GRBWithColor.swift */,
+			);
+			path = "颜色";
 			sourceTree = "<group>";
 		};
 		18C2E2141EB1C3A40097A642 /* row7 */ = {
@@ -534,7 +613,8 @@
 				TargetAttributes = {
 					1879FD661E695C9D003630C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 893HBTC6N3;
+						DevelopmentTeam = C7N4XVPZ37;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					1879FD7F1E695C9D003630C7 = {
@@ -658,11 +738,14 @@
 			files = (
 				1879FDA11E695CDA003630C7 /* CDNaigationVC.m in Sources */,
 				1879FD721E695C9D003630C7 /* ViewController.m in Sources */,
+				18A452F520A52F5D00A5D624 /* ExtendDelegate.m in Sources */,
+				18A452FC20A530C500A5D624 /* HeightChangeTextView.swift in Sources */,
 				18F7C8BC1E6D2A2D00EF8888 /* AKCheckBox.m in Sources */,
 				18F7C8B81E6D26BE00EF8888 /* CTCheckbox.m in Sources */,
 				1879FD6F1E695C9D003630C7 /* AppDelegate.mm in Sources */,
 				188649091E7BB4BD000BAE7F /* AFURLSessionManager.m in Sources */,
 				1848C79A1E72365200479347 /* ImageViewController.m in Sources */,
+				18A4530020A531AC00A5D624 /* HexWithColor.m in Sources */,
 				188649051E7BB4BD000BAE7F /* AFNetworkReachabilityManager.m in Sources */,
 				182AAB5B1E70EDA700D3FC43 /* CDRowZeroCell.m in Sources */,
 				1879FDA51E695D3C003630C7 /* CDRootTVC.m in Sources */,
@@ -675,11 +758,13 @@
 				1879FD6C1E695C9D003630C7 /* main.m in Sources */,
 				18E8C6621E7BAF6100592BE2 /* CDRowFiveVC.m in Sources */,
 				182AAB571E70EC5D00D3FC43 /* PoemModel.m in Sources */,
+				18A4530220A531DB00A5D624 /* GRBWithColor.swift in Sources */,
 				188649041E7BB4BD000BAE7F /* AFHTTPSessionManager.m in Sources */,
 				1879FDA91E695E22003630C7 /* CDRowZeroTVC.m in Sources */,
 				18F7C8B41E6D24F100EF8888 /* CheckButton.m in Sources */,
 				1838BA5F1EDFC70D00DB6A34 /* QRCodetabbarVC.m in Sources */,
 				1838BA5A1EDFBF3400DB6A34 /* NativeQRCodeVC.m in Sources */,
+				18A452AF20A52B0E00A5D624 /* TTSPlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,14 +914,18 @@
 			baseConfigurationReference = 5AB7B9B6DD1072487A16B46F /* Pods-CodeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 893HBTC6N3;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = C7N4XVPZ37;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CodeDemo/CodeDemo.pch";
 				INFOPLIST_FILE = CodeDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqj.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Joyce.CodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "classes/扩展/输入框/CodeDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -845,25 +934,29 @@
 			baseConfigurationReference = BCFD00AE7E72DC90434B1A45 /* Pods-CodeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 893HBTC6N3;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = C7N4XVPZ37;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CodeDemo/CodeDemo.pch";
 				INFOPLIST_FILE = CodeDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqj.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Joyce.CodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "classes/扩展/输入框/CodeDemo-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		1879FD981E695C9D003630C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 893HBTC6N3;
 				INFOPLIST_FILE = CodeDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqj.CodeDemoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Joyce.CodeDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeDemo.app/CodeDemo";
 			};
@@ -872,11 +965,12 @@
 		1879FD991E695C9D003630C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 893HBTC6N3;
 				INFOPLIST_FILE = CodeDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqj.CodeDemoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Joyce.CodeDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeDemo.app/CodeDemo";
 			};
@@ -885,10 +979,11 @@
 		1879FD9B1E695C9D003630C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 893HBTC6N3;
 				INFOPLIST_FILE = CodeDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqj.CodeDemoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Joyce.CodeDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = CodeDemo;
 			};
@@ -897,10 +992,11 @@
 		1879FD9C1E695C9D003630C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 893HBTC6N3;
 				INFOPLIST_FILE = CodeDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tqj.CodeDemoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Joyce.CodeDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = CodeDemo;
 			};

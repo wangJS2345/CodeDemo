@@ -29,6 +29,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+    _session = [[AVCaptureSession alloc] init];
+    [_session setSessionPreset:AVCaptureSessionPresetHigh];
+    _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
+
+    _output = [[AVCaptureMetadataOutput alloc] init];
+    
+    // 1.获取屏幕的frame
+    CGRect viewRect = self.view.frame;
+    // 2.获取扫描容器的frame
+    CGRect containerRect = self.view.frame;
+    
+    CGFloat x = containerRect.origin.y / viewRect.size.height;
+    CGFloat y = containerRect.origin.x / viewRect.size.width;
+    CGFloat width = containerRect.size.height / viewRect.size.height;
+    CGFloat height = containerRect.size.width / viewRect.size.width;
+    _output.rectOfInterest = CGRectMake(x, y, width, height);
+    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue() ];
+    _containerLayer = [[CALayer alloc] init];
+
+    
     // 开始扫描二维码
     [self startScan];
 }
@@ -47,73 +69,13 @@
     // Pass the selected object to the new view controller.
 }
 */
-#pragma mark - 懒加载
-- (AVCaptureDevice *)device
-{
-    if (_device == nil) {
-        _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    }
-    return _device;
-}
-
-- (AVCaptureDeviceInput *)input
-{
-    if (_input == nil) {
-        _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
-    }
-    return _input;
-}
-
-- (AVCaptureSession *)session
-{
-    if (_session == nil) {
-        _session = [[AVCaptureSession alloc] init];
-    }
-    return _session;
-}
-
-- (AVCaptureVideoPreviewLayer *)previewLayer
-{
-    if (_previewLayer == nil) {
-        _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
-    }
-    return _previewLayer;
-}
-
 // 设置输出对象解析数据时感兴趣的范围
 // 默认值是 CGRect(x: 0, y: 0, width: 1, height: 1)
 // 通过对这个值的观察, 我们发现传入的是比例
 // 注意: 参照是以横屏的左上角作为, 而不是以竖屏
 //        out.rectOfInterest = CGRect(x: 0, y: 0, width: 0.5, height: 0.5)
-- (AVCaptureMetadataOutput *)output
-{
-    if (_output == nil) {
-        _output = [[AVCaptureMetadataOutput alloc] init];
-        
-        // 1.获取屏幕的frame
-        CGRect viewRect = self.view.frame;
-        // 2.获取扫描容器的frame
-        CGRect containerRect = self.view.frame;
-        
-        CGFloat x = containerRect.origin.y / viewRect.size.height;
-        CGFloat y = containerRect.origin.x / viewRect.size.width;
-        CGFloat width = containerRect.size.height / viewRect.size.height;
-        CGFloat height = containerRect.size.width / viewRect.size.width;
-        
-        // CGRect outRect = CGRectMake(x, y, width, height);
-        // [_output rectForMetadataOutputRectOfInterest:outRect];
-        _output.rectOfInterest = CGRectMake(x, y, width, height);
-    }
-    return _output;
-}
 
-- (CALayer *)containerLayer
-{
-    if (_containerLayer == nil) {
-        _containerLayer = [[CALayer alloc] init];
-    }
-    return _containerLayer;
-}
+
 #pragma mark - 开始扫描
 - (void)startScan
 {

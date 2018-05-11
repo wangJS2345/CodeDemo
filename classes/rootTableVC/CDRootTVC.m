@@ -98,6 +98,13 @@
         
         [self.navigationController pushViewController:controller animated:YES];
     }
+    if (indexPath.row == 9) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"QRCode" bundle:nil];
+        //        NativeQRCodeVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"NativeQRCodeVC"];
+        QRCodetabbarVC * controller = [storyboard instantiateViewControllerWithIdentifier:@"QRCodetabbarVC"];
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 - (void)shareFile:(NSString *)string {
     NSString *filePath = string;
